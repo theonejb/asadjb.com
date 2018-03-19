@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    {{ .Hugo.Generator }}
+    <title>{{ block "title" . }} {{ .Site.Title }} {{ end }}</title>
+
+    <link rel="stylesheet" href='{{ relURL "/libs/normalize.css"}}'>
+    <link rel="stylesheet" href='{{ relURL "/libs/flexboxgrid/flexboxgrid.min.css" }}'>
+    <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond|Proza+Libre" rel="stylesheet">
+    <link rel="stylesheet" href='{{ relURL "/css/common.css" }}'>
+
+    {{ block "extra_css" . }}
+    {{ end }}
+</head>
+
+<body>
+    <div class="row" id="header">
+        <div class="col-xs">
+            <div class="row center-xs mb-10">
+                <div class="col-xs-4" id="brand">
+                    {{ .Site.Title }}
+                </div>
+            </div>
+            <div class="row">
+                <ul id="header-menu" class="col-xs-12">
+                    {{ range .Site.Menus.main }}
+                    <li>
+                        <a href="{{ absURL .URL }}">{{ .Name }}</a>
+                    </li>
+                    {{ end }}
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="row center-xs text-left" id="container">
+    	<div class="col-xs-8">
+    		{{ block "main" . }} {{ end }}
+    	</div>
+    </div>
+</body>
+
+</html>

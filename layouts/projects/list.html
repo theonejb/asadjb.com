@@ -1,0 +1,21 @@
+{{ define "extra_css" }}
+<link rel="stylesheet" href='{{ relURL "css/posts-list.css" }}'> 
+{{ end }}
+
+{{ define "main" }}
+<div class="row">
+    <div class="col-xs-12">
+        <h1>{{ .Title }}</h1>
+        <div class="row">
+            {{ range .Pages }}
+            <div class="col-xs-12">
+                <h2 class="project-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+                <div class="project-summary">
+                    {{ .Summary }}
+                </div>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</div>
+{{ end }}

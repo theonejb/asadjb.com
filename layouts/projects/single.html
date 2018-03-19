@@ -1,0 +1,10 @@
+{{ define "main" }}
+<div class="row">
+    {{ partial "breadcrumbs.html" . }}
+
+    <div class="col-xs-12">
+        <h1>{{ .Title }}</h1> 
+        {{ .Content }}
+    </div>
+</div>
+{{ end }}

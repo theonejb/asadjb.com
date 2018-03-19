@@ -1,0 +1,11 @@
+{{ define "extra_css" }}
+<link rel="stylesheet" href='{{ relURL "/css/home.css" }}'>
+{{ end }}
+
+{{ define "main" }}
+<div class="row center-xs">
+	<div class="col-xs-10 text-left">
+		{{ .Content }}
+	</div>
+</div>
+{{ end }}
