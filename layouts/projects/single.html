@@ -3,7 +3,11 @@
     {{ partial "breadcrumbs.html" . }}
 
     <div class="col-xs-12">
-        <h1>{{ .Title }}</h1> 
+        <h1>{{ .Title }}</h1>
+        <strong>Url: </strong> 
+        <a href="{{ .Params.project_url }}" target="_blank">
+        	{{ .Params.project_url }}
+        </a>
         {{ .Content }}
     </div>
 </div>
